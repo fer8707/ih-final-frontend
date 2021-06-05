@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import Login  from './components/auth/Login'
+import NuevaCuenta from './components/auth/NuevaCuenta'
+import Proyectos from './components/proyectos/ListadoProyectos'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+
+import AuthState from "./context/autenticacion/AuthState"
+import ProyectoState from './context/proyectos/ProyectoState'
+
+import RutaPrivada from './components/rutas/RutaPrivada'
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+    <ProyectoState>
+      <AuthState>
+            <Router>
+              <Switch>
+                <Route 
+                  path="/"
+                  component={Login}
+                  exact
+                />
+                <Route 
+                  path="/nueva-cuenta"
+                  component={NuevaCuenta}
+                  exact
+                />
+                <RutaPrivada 
+                  path="/proyectos"
+                  component={Proyectos}
+                  exact              
+                />
+              </Switch>
+            </Router>  
+      </AuthState>
+    </ProyectoState>
+    </>
   );
 }
 
