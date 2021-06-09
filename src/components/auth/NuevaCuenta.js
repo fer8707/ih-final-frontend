@@ -26,7 +26,7 @@ export default function NuevaCuenta(props) {
     // C. USEEFFECT - MONITOREO DE CAMBIOS
     useEffect(() => {
         if(autenticado){
-           props.history.push('/proyectos') 
+           props.history.push('/trabajos') 
         }
 
         return

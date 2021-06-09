@@ -22,7 +22,7 @@ export default function Login(props) {
     useEffect(() => {
 
         if(autenticado){    
-            props.history.push('/proyectos')
+            props.history.push('/trabajos')
         }
         return
     }, [ autenticado ])

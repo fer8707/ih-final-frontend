@@ -1,6 +1,7 @@
 import Login  from './components/auth/Login'
 import NuevaCuenta from './components/auth/NuevaCuenta'
-import Proyectos from './components/proyectos/ListadoProyectos'
+import Trabajos from './components/trabajos/ListadoTrabajos'
+import NuevoTrabajo from './components/trabajos/NuevoTrabajo'
 
 import {
   BrowserRouter as Router,
@@ -9,7 +10,7 @@ import {
 } from 'react-router-dom'
 
 import AuthState from "./context/autenticacion/AuthState"
-import ProyectoState from './context/proyectos/ProyectoState'
+import TrabajoState from './context/trabajos/TrabajoState'
 
 import RutaPrivada from './components/rutas/RutaPrivada'
 
@@ -18,8 +19,8 @@ import './App.css';
 function App() {
   return (
     <>
-
-    <ProyectoState>
+    
+    <TrabajoState>
       <AuthState>
             <Router>
               <Switch>
@@ -34,14 +35,20 @@ function App() {
                   exact
                 />
                 <RutaPrivada 
-                  path="/proyectos"
-                  component={Proyectos}
+                  path="/trabajos"
+                  component={Trabajos}
+                  exact              
+                />
+                 <Route 
+                  path="/nuevo/trabajo"
+                  component={NuevoTrabajo}
                   exact              
                 />
               </Switch>
             </Router>  
       </AuthState>
-    </ProyectoState>
+    </TrabajoState>
+  
     </>
   );
 }
