@@ -80,51 +80,70 @@ export default function ListadoTrabajos() {
   return (
     <div>
       {mostrarFormulario ? (
-        <div className="contenedor-formulario">
-          <h1> Crea un nuevo trabajo </h1> <span> Título del trabajo: </span>
-          <input
-            className="input-formulario-trabajo"
-            onChange={(event) => {
-              setTitulo(event.target.value);
-            }}
-          />
-          <span> Descripción: </span>
-          <input
-            className="input-formulario-trabajo"
-            onChange={(event) => {
-              setDescripcion(event.target.value);
-            }}
-          />
-          <span> Duración del trabajo: </span>
-          <input
-            className="input-formulario-trabajo"
-            onChange={(event) => {
-              setDuracion(event.target.value);
-            }}
-          />
-          <span> Requisitos: </span>
-          <input
-            className="input-formulario-trabajo"
-            onChange={(event) => {
-              setRequsitos(event.target.value);
-            }}
-          />
-          <span> Ubicación del trabajo: </span>
-          <input
-            className="input-formulario-trabajo"
-            onChange={(event) => {
-              setUbicacion(event.target.value);
-            }}
-          />
-          <button
-            className="btn btn-lg btn-primary"
-            type="button"
-            onClick={() => {
-              postNuevoFormulario();
-            }}
-          >
-            enviar
-          </button>
+        <div className="login-form">
+          <h1> Crea un nuevo trabajo </h1> 
+          <div className="campo-login">
+            <label className="label-login">Título del trabajo</label>
+              <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                placeholder="trabajo que ofreces"
+                onChange={(event) => setTitulo(event.target.value)}
+              />
+          </div>
+          <div className="campo-login">
+            <label className="label-login">Descripción</label>
+              <input
+                type="text"
+                id="descripcion"
+                name="descripcion"
+                placeholder="breve descrición del trabajo"
+                onChange={(event) => setDescripcion(event.target.value)}
+              />
+          </div>
+          <div className="campo-login">
+            <label className="label-login">Duración del trabajo</label>
+              <input
+                type="text"
+                id="duracion"
+                name="duracion"
+                placeholder="tiempo aproximado para el trabajo"
+                onChange={(event) => setDuracion(event.target.value)}
+              />
+          </div>
+          <div className="campo-login">
+            <label className="label-login">Requisitos</label>
+              <input
+                type="text"
+                id="requisitos"
+                name="requisitos"
+                placeholder="ej: traer herramienta"
+                onChange={(event) => setRequsitos(event.target.value)}
+              />
+          </div>
+          <div className="campo-login">
+            <label className="label-login">Ubicación del trabajo</label>
+              <input
+                type="text"
+                id="ubicacion"
+                name="ubicacion"
+                placeholder="link de google maps"
+                onChange={(event) => setUbicacion(event.target.value)}
+              />
+          </div>
+          <div className="campo-login">
+            <button 
+              type="button" 
+              className="button-login-form"
+              onClick={() => {
+                postNuevoFormulario();
+                setMostrarFormulario(false)
+              }}
+              >
+              Crear trabajo
+            </button>
+          </div>
         </div>
       ) : (
         <div className="listado-padre">
@@ -179,7 +198,7 @@ export default function ListadoTrabajos() {
                         {e.requisitos}
                       </p>
                       <button className="button-ubicacion">
-                        <a href={e.ubicacion}> Ver Ubicación </a>
+                        <a href={e.ubicacion}> Quiero ser chalán </a>
                       </button>
                     </div>
                   );
