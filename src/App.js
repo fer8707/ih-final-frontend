@@ -1,7 +1,6 @@
 import Login  from './components/auth/Login'
 import NuevaCuenta from './components/auth/NuevaCuenta'
 import Trabajos from './components/trabajos/ListadoTrabajos'
-import NuevoTrabajo from './components/trabajos/NuevoTrabajo'
 
 import {
   BrowserRouter as Router,
@@ -18,6 +17,7 @@ import './App.css';
 
 function App() {
   return (
+    <div>
     <>
     
     <TrabajoState>
@@ -39,17 +39,13 @@ function App() {
                   component={Trabajos}
                   exact              
                 />
-                 <Route 
-                  path="/nuevo/trabajo"
-                  component={NuevoTrabajo}
-                  exact              
-                />
               </Switch>
             </Router>  
       </AuthState>
     </TrabajoState>
   
     </>
+    </div>
   );
 }
 
