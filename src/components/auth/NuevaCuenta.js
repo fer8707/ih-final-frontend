@@ -7,7 +7,7 @@ export default function NuevaCuenta(props) {
   // 1. FUNCIONES
   // A. ACCESO AL CONTEXTO
   const ctxAuth = useContext(AuthContext);
-  const { mensaje, autenticado, usuario, registrarUsuario } = ctxAuth;
+  const { autenticado, registrarUsuario } = ctxAuth;
 
   // B. GESTIÓN DE ESTADO LOCAL (FORMULARIOS)
   const [datosUsuarioFormulario, setDatosUsuarioFormulario] = useState({

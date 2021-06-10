@@ -4,7 +4,6 @@ import React, { useReducer } from 'react'
 import clienteAxios from '../../config/axios'
 import tokenAuth from '../../config/token'
 
-import axios from 'axios'
 
 import AuthContext from './AuthContext'
 import AuthReducer from './AuthReducer'
@@ -28,7 +27,7 @@ const AuthState = (props) => {
         // VAMOS A EJECUTAR UN PROCESO ASÍNCRONO
         try {
             // EJECUTAMOS UN MÉTODO POST DE CREACIÓN DE USUARIO EN EL BACKEND
-            const respuesta = await axios.post("http://localhost:4000/api/usuarios", datos)
+            const respuesta = await clienteAxios.post("/api/usuarios", datos)
 
             console.log(respuesta)
 

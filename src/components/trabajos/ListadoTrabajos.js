@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import moment from "moment";
-import { loader } from "@googlemaps/js-api-loader";
 
 import TrabajoContext from "./../../context/trabajos/TrabajoContext";
 import AuthContext from "./../../context/autenticacion/AuthContext";
@@ -38,10 +37,10 @@ export default function ListadoTrabajos() {
 
   // EXTRAER LOS VALORES DEL CONTEXT (ESTADO GLOBAL)
   const trabajoContext = useContext(TrabajoContext);
-  const { trabajos, obtenerTrabajos, crearTrabajo } = trabajoContext;
+  const { trabajos, obtenerTrabajos } = trabajoContext;
 
   const authContext = useContext(AuthContext);
-  const { verificarUsuario, cerrarSesion } = authContext;
+  const { cerrarSesion } = authContext;
 
   useEffect(() => {
     console.log("mostrarFormulario", mostrarFormulario);
@@ -58,10 +57,7 @@ export default function ListadoTrabajos() {
     e.preventDefault();
     cerrarSesion();
   };
-  const clickCrear = (e) => {
-    e.preventDefault();
-    crearTrabajo();
-  };
+  
 
   const postNuevoFormulario = async () => {
     const data = {
