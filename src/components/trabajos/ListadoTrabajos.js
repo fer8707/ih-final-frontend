@@ -68,7 +68,7 @@ export default function ListadoTrabajos() {
       ubicacion: ubicacion,
     };
 
-    await clienteAxios.post("http://localhost:4000/api/trabajos", data);
+    await clienteAxios.post("/api/trabajos", data);
   };
 
   console.log("----1----", mostrarFormulario);
