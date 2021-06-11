@@ -47,6 +47,7 @@ export default function Login(props) {
   return (
     <div className="layout">
         <div className="img-container-login">
+            
             <img className="img-login" src="login.svg" alt="chalannet"/>
         </div>
       <div className="login-form" >

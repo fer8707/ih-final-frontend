@@ -18,6 +18,9 @@ import './App.css';
 function App() {
   return (
     <div>
+      <>
+      <h1>Chalan-net</h1>
+      </>
     <>
     
     <TrabajoState>
